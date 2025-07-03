@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect With Us - GetBetterSoon</title>
+    <meta name="description" content="Stay connected with GetBetterSoon! Sign up for story updates, share your feedback, and discover fun facts for kids.">
+    
+    <!-- Google Fonts - Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>GetBetterSoon</h1>
+                    <span class="tagline">Growing Together, Learning Together! 💕</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="blogs.html" class="nav-link">Our Stories</a></li>
+                    <li><a href="about.html" class="nav-link">About Me</a></li>
+                    <li><a href="connect.html" class="nav-link active">Connect</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Connect With Us</h1>
+            <p class="page-subtitle">Stay updated, share your thoughts, and discover fun facts together!</p>
+        </div>
+    </section>
+
+    <!-- Connect Section -->
+    <section class="connect-section">
+        <div class="container">
+            <div class="connect-grid">
+                
+                <!-- Newsletter Signup -->
+                <div class="connect-card">
+                    <div class="connect-card-header">
+                        <div class="connect-icon">📬</div>
+                        <h3>Get Story Updates</h3>
+                    </div>
+                    <div class="connect-card-content">
+                        <p>Be the first to know when we publish new stories! Get gentle reminders about new learning adventures for your family.</p>
+                        
+                        <form class="connect-form" id="newsletter-form">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Family Name (optional)</label>
+                                <input type="text" id="name" name="name" placeholder="The Smith Family">
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="kids-age" name="preferences" value="young-kids">
+                                <label for="kids-age">I have young children (ages 3-8)</label>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="older-kids" name="preferences" value="older-kids">
+                                <label for="older-kids">I have older children (ages 9-12)</label>
+                            </div>
+                            <button type="submit" class="connect-btn">
+                                <span class="btn-text">Stay Connected</span>
+                                <span class="btn-icon">💕</span>
+                            </button>
+                        </form>
+                        
+                        <div class="success-message" id="newsletter-success" style="display: none;">
+                            <p>🌟 Thank you! You're now connected to our GetBetterSoon family!</p>
+                        </div>
+                        
+                        <p class="form-note">We respect your privacy and will never spam you. Unsubscribe anytime!</p>
+                    </div>
+                </div>
+
+                <!-- Feedback Form -->
+                <div class="connect-card">
+                    <div class="connect-card-header">
+                        <div class="connect-icon">💭</div>
+                        <h3>Share Your Thoughts</h3>
+                    </div>
+                    <div class="connect-card-content">
+                        <p>Help us make GetBetterSoon even better! Share your ideas, suggestions, or topics you'd like us to cover.</p>
+                        
+                        <form class="connect-form" id="feedback-form">
+                            <div class="form-group">
+                                <label for="feedback-type">What would you like to share?</label>
+                                <select id="feedback-type" name="feedback-type" required>
+                                    <option value="">Choose one...</option>
+                                    <option value="story-request">Story idea or topic request</option>
+                                    <option value="feedback">Feedback on existing stories</option>
+                                    <option value="improvement">Suggestion for improvement</option>
+                                    <option value="thank-you">Just wanted to say thank you!</option>
+                                    <option value="other">Something else</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Tell us what's on your mind..." required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Email (optional)</label>
+                                <input type="email" id="contact-email" name="contact-email" placeholder="If you'd like a response">
+                            </div>
+                            <button type="submit" class="connect-btn">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-icon">✨</span>
+                            </button>
+                        </form>
+                        
+                        <div class="success-message" id="feedback-success" style="display: none;">
+                            <p>🌈 Thank you for sharing! Your message means the world to us!</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>GetBetterSoon</h3>
+                    <p>Supporting families through life's learning moments with gentle guidance and loving care.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blogs.html">Our Stories</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="connect.html">Connect</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>A Gentle Reminder</h4>
+                    <p>Our stories are for learning and comfort. Always talk to your healthcare provider for medical questions and concerns. You're doing great, parent! 💕</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GetBetterSoon. Made with love 🌸</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/connect.js"></script>
+</body>
+</html> 

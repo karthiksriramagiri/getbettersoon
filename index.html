@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetBetterSoon - A Mom & Kids Life Learning Blog</title>
+    <meta name="description" content="A caring blog for moms and kids, helping children understand life's little challenges with simple explanations, gentle guidance, and beautiful illustrations.">
+    
+    <!-- Google Fonts - Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>GetBetterSoon</h1>
+                    <span class="tagline">Growing Together, Learning Together! 💕</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="blogs.html" class="nav-link">Our Stories</a></li>
+                    <li><a href="about.html" class="nav-link">About Me</a></li>
+                    <li><a href="connect.html" class="nav-link">Connect</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h2 class="hero-title">Welcome, Amazing Families!</h2>
+                <p class="hero-subtitle">A special place where moms and kids learn together about life's big and little moments - from scraped knees to sweet dreams!</p>
+                <div class="hero-features">
+                    <div class="feature">
+                        <span class="feature-text">Kid-Friendly Guidance</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-text">Parent-Approved Tips</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-text">Gentle Learning</span>
+                    </div>
+                </div>
+                <a href="blogs.html" class="cta-button">Explore Our Stories</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Stories Preview -->
+    <section class="featured-preview">
+        <div class="container">
+            <h2 class="section-title">Latest Stories</h2>
+            <div class="preview-grid">
+                <div class="preview-card">
+                    <div class="preview-image">
+                        <img src="images/1_gbs.avif" alt="Sleep story preview" />
+                    </div>
+                    <div class="preview-content">
+                        <h3>Why Can't I Sleep at Night?</h3>
+                        <p>Learn about healthy sleep habits and bedtime routines that work for the whole family. Discover gentle ways to handle insomnia and create peaceful sleep environments.</p>
+                        <a href="blog-sleep.html" class="read-more">Read More →</a>
+                    </div>
+                </div>
+                
+                <div class="preview-card">
+                    <div class="preview-image">
+                        <img src="images/karthikeya-8.png" alt="Broken bones story preview" />
+                    </div>
+                    <div class="preview-content">
+                        <h3>Understanding Broken Bones</h3>
+                        <p>What happens when you break a bone? Learn about casts, healing, and how doctors help bones grow back stronger. A gentle guide to help kids understand fractures without fear.</p>
+                        <a href="blog-broken-bones.html" class="read-more">Read More →</a>
+                    </div>
+                </div>
+                
+                <div class="preview-card">
+                    <div class="preview-content">
+                        <h3>More Stories Coming Soon!</h3>
+                        <p>We're creating wonderful guides to help families navigate life's adventures together.</p>
+                        <div class="coming-topics">
+                            <span class="topic-tag">🦷 Dental Care</span>
+                            <span class="topic-tag">🩹 First Aid</span>
+                            <span class="topic-tag">🐝 Bug Bites</span>
+                            <span class="topic-tag">💉 Doctor Visits</span>
+                            <span class="topic-tag">🌡️ When You Feel Sick</span>
+                            <span class="topic-tag">💪 Heart Health</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts for Kids -->
+    <section class="fun-facts-section">
+        <div class="container">
+            <h2 class="section-title">Fun Facts for Kids!</h2>
+            <div class="fun-facts-content">
+                <div class="fun-fact-card">
+                    <div class="fun-fact-header">
+                        <div class="fun-fact-icon">🌟</div>
+                        <h3>Discover Amazing Things!</h3>
+                        <p>Click the button below to learn something that will make you say "WOW!"</p>
+                    </div>
+                    
+                    <div class="fun-fact-display" id="fun-fact-display">
+                        <div class="fun-fact-content">
+                            <p class="fun-fact-text">Click "Surprise Me!" to learn something amazing!</p>
+                            <div class="fun-fact-emoji">🎉</div>
+                        </div>
+                    </div>
+                    
+                    <button class="fun-fact-btn" id="new-fact-btn">
+                        <span class="btn-text">Surprise Me!</span>
+                        <span class="btn-icon">🎲</span>
+                    </button>
+                    
+                    <div class="fun-fact-counter">
+                        <p>Fun facts discovered: <span id="fact-counter">0</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="about-preview">
+        <div class="container">
+            <div class="about-preview-content">
+                <h2>About GetBetterSoon</h2>
+                <p>A safe space where families can learn together about life's little challenges. Every story is written with love, researched with care, and designed to help both kids and parents feel more prepared and less worried.</p>
+                <a href="about.html" class="learn-more-btn">Learn More About Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>GetBetterSoon</h3>
+                    <p>Supporting families through life's learning moments with gentle guidance and loving care.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blogs.html">Our Stories</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="connect.html">Connect</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>A Gentle Reminder</h4>
+                    <p>Our stories are for learning and comfort. Always talk to your healthcare provider for medical questions and concerns. You're doing great, parent! 💕</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GetBetterSoon. Made with love 🌸</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/connect.js"></script>
+</body>
+</html> 
