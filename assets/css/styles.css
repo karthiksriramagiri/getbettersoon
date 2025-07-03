@@ -57,6 +57,7 @@ body::before {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    position: relative;
 }
 
 .logo h1 {
@@ -96,6 +97,9 @@ body::before {
     transition: all 0.3s ease;
     position: relative;
     padding: 0.5rem 0;
+    min-height: 44px; /* Improved touch target */
+    display: flex;
+    align-items: center;
 }
 
 .nav-link:hover {
@@ -122,6 +126,9 @@ body::before {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+    transition: all 0.3s ease;
 }
 
 .hamburger span {
@@ -131,6 +138,18 @@ body::before {
     margin: 3px 0;
     transition: 0.3s;
     border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-6px, -6px);
 }
 
 /* Hero */
@@ -2127,11 +2146,120 @@ body::before {
 }
 
 /* Responsive Design */
+/* Mobile Navigation Styles */
 @media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.5rem;
+    .hamburger {
+        display: flex;
     }
     
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 80px;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(15px);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        border-top: 2px solid var(--light-pink);
+        padding: 2rem 0;
+        gap: 0;
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+
+    .nav-link {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        min-height: 48px;
+        border-radius: 8px;
+        margin: 0 1rem;
+        justify-content: center;
+    }
+
+    .nav-link:hover {
+        background: rgba(255, 107, 157, 0.1);
+        transform: none;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    .nav-container {
+        padding: 1rem 1.5rem;
+    }
+
+    .logo h1 {
+        font-size: 1.8rem;
+    }
+
+    .tagline {
+        font-size: 0.8rem;
+    }
+
+    .hero {
+        padding: 120px 0 60px;
+        min-height: 60vh;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+    }
+
+    .hero-features {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .feature {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        width: auto;
+        min-width: 200px;
+    }
+
+    .cta-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        padding: 0 1rem;
+    }
+
+    .preview-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .preview-card {
+        margin-bottom: 1rem;
+    }
+
     .content-block {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -2146,23 +2274,52 @@ body::before {
     
     .post-title {
         font-size: 2.2rem;
+        padding: 0 1rem;
     }
     
     .habit-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     .related-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     .newsletter-form {
         flex-direction: column;
+        gap: 1rem;
+    }
+
+    .email-input {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .subscribe-btn {
+        padding: 1rem 2rem;
+        width: 100%;
+        min-height: 48px;
     }
     
     .blog-posts-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+
+    .blog-card {
+        margin-bottom: 1rem;
+    }
+
+    .blog-card-content {
+        padding: 1.5rem;
+    }
+
+    .blog-card-title {
+        font-size: 1.3rem;
+        line-height: 1.3;
     }
     
     .intro-content {
@@ -2179,15 +2336,97 @@ body::before {
         max-width: 200px;
         height: 200px;
     }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer-links ul {
+        justify-content: center;
+    }
+
+    /* Better touch targets */
+    .read-more, .learn-more-btn, .read-more-btn {
+        padding: 0.8rem 1.5rem;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Improved form elements */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 1rem;
+        min-height: 48px;
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .nav-container {
+        padding: 0.8rem 1rem;
+    }
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .tagline {
+        font-size: 0.75rem;
+    }
+
+    .nav-menu {
+        top: 70px;
+        padding: 1.5rem 0;
+    }
+
+    .nav-link {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        margin: 0 0.5rem;
+    }
+
     .hero {
         padding: 100px 0 50px;
+        min-height: 50vh;
     }
     
     .hero-title {
         font-size: 2rem;
+        padding: 0 0.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .hero-features {
+        padding: 0 1rem;
+    }
+
+    .feature {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+        min-width: 150px;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        padding: 0 0.5rem;
     }
     
     .page-header, .blog-post-header {
@@ -2196,10 +2435,15 @@ body::before {
     
     .post-title {
         font-size: 1.8rem;
+        padding: 0 0.5rem;
     }
     
     .blog-listing, .featured-preview, .about-preview {
         padding: 50px 0;
+    }
+
+    .featured-preview, .about-preview, .fun-facts-section {
+        padding: 40px 0;
     }
     
     .content-block {
@@ -2209,19 +2453,118 @@ body::before {
     
     .content-text h3 {
         font-size: 1.3rem;
+        line-height: 1.2;
+    }
+
+    .content-text p {
+        font-size: 0.95rem;
+        line-height: 1.5;
     }
     
     .content-image img {
         height: 180px;
     }
+
+    .blog-card {
+        margin-bottom: 1.5rem;
+    }
     
     .blog-card-content {
         padding: 1.2rem;
+    }
+
+    .blog-card-title {
+        font-size: 1.2rem;
+        line-height: 1.2;
+    }
+
+    .blog-card-excerpt {
+        font-size: 0.9rem;
+    }
+
+    .preview-content h3 {
+        font-size: 1.2rem;
+        line-height: 1.2;
+    }
+
+    .preview-content p {
+        font-size: 0.9rem;
     }
     
     .newsletter-section {
         padding: 1.5rem;
         margin-top: 2rem;
+    }
+
+    .newsletter-section h3 {
+        font-size: 1.3rem;
+    }
+
+    .footer {
+        padding: 2rem 0 1rem;
+    }
+
+    .footer-content {
+        gap: 1.5rem;
+    }
+
+    .footer-logo h3 {
+        font-size: 1.3rem;
+    }
+
+    .footer-links h4, .footer-contact h4 {
+        font-size: 1rem;
+    }
+
+    .footer-bottom {
+        padding: 1rem 0;
+        font-size: 0.9rem;
+    }
+
+    /* Improved spacing for small screens */
+    .tip-list, .quick-tips {
+        padding: 1rem;
+    }
+
+    .tip-list h4 {
+        font-size: 1.1rem;
+    }
+
+    .tip-list li {
+        font-size: 0.9rem;
+        padding: 0.3rem 0;
+    }
+
+    .good-habit, .avoid-habit {
+        padding: 1rem;
+    }
+
+    .good-habit h5, .avoid-habit h5 {
+        font-size: 1rem;
+    }
+
+    /* Touch-friendly improvements */
+    .topic-tag {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        margin: 0.2rem;
+    }
+
+    .coming-soon-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+
+    /* Image optimizations */
+    .preview-image img,
+    .blog-card-image img {
+        height: 140px;
+        object-fit: cover;
+    }
+
+    .intro-image img {
+        max-width: 150px;
+        height: 150px;
     }
 }
 
@@ -2556,23 +2899,72 @@ body::before {
     .connect-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .connect-card {
+        margin-bottom: 1rem;
     }
     
     .connect-card-content {
         padding: 1.5rem;
     }
+
+    .connect-form {
+        gap: 1.2rem;
+    }
+
+    .form-group label {
+        font-size: 1rem;
+    }
+
+    .connect-btn, .fun-fact-btn {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        min-height: 48px;
+        width: 100%;
+    }
     
     .fun-fact-display {
         padding: 1.5rem;
         min-height: 100px;
+        margin: 1rem 0;
     }
     
     .fun-fact-text {
         font-size: 1rem;
+        line-height: 1.4;
     }
     
     .fun-fact-emoji {
         font-size: 2rem;
+    }
+
+    .fun-fact-card {
+        padding: 0 1rem;
+    }
+
+    .fun-fact-header h3 {
+        font-size: 1.3rem;
+    }
+
+    .fun-fact-header p {
+        font-size: 0.95rem;
+    }
+
+    /* Improved grid layouts */
+    .journey-grid, .approach-grid, .vision-goals {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .journey-item, .approach-item, .vision-goal {
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .journey-item h4, .approach-item h4, .vision-goal h4 {
+        font-size: 1.2rem;
     }
 }
 
@@ -2793,5 +3185,232 @@ body::before {
     .fun-facts-section .fun-fact-btn {
         padding: 0.8rem 1.5rem;
         font-size: 0.9rem;
+    }
+
+    .connect-grid {
+        padding: 0 0.5rem;
+        gap: 1rem;
+    }
+
+    .connect-card-content {
+        padding: 1.2rem;
+    }
+
+    .connect-btn, .fun-fact-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .fun-fact-display {
+        padding: 1.2rem;
+        min-height: 80px;
+    }
+
+    .fun-fact-text {
+        font-size: 0.9rem;
+    }
+
+    .fun-fact-emoji {
+        font-size: 1.8rem;
+    }
+
+    .journey-item, .approach-item, .vision-goal {
+        padding: 1.2rem;
+    }
+
+    .journey-item h4, .approach-item h4, .vision-goal h4 {
+        font-size: 1.1rem;
+    }
+
+    .journey-item p, .approach-item p, .vision-goal p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Very small screens (320px and below) */
+@media (max-width: 320px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+
+    .nav-container {
+        padding: 0.5rem;
+    }
+
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+
+    .tagline {
+        font-size: 0.7rem;
+    }
+
+    .nav-menu {
+        top: 60px;
+    }
+
+    .hamburger {
+        padding: 6px;
+    }
+
+    .hamburger span {
+        width: 20px;
+        height: 2px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .feature {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        min-width: 120px;
+    }
+
+    .cta-button {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
+    }
+
+    .preview-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .blog-card-title {
+        font-size: 1.1rem;
+    }
+
+    .content-text h3 {
+        font-size: 1.2rem;
+    }
+
+    .connect-card-content {
+        padding: 1rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .fun-fact-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .fun-fact-text {
+        font-size: 0.85rem;
+    }
+}
+
+/* Accessibility and Touch Improvements */
+@media (hover: none) and (pointer: coarse) {
+    /* Touch device specific styles */
+    .nav-link:hover,
+    .blog-card:hover,
+    .preview-card:hover,
+    .connect-card:hover {
+        transform: none;
+    }
+    
+    .nav-link:active,
+    .blog-card:active,
+    .preview-card:active,
+    .connect-card:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Focus styles for accessibility */
+.nav-link:focus,
+.cta-button:focus,
+.read-more:focus,
+.learn-more-btn:focus,
+.read-more-btn:focus,
+.connect-btn:focus,
+.fun-fact-btn:focus,
+.subscribe-btn:focus {
+    outline: 3px solid var(--pink-accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus,
+.email-input:focus {
+    outline: 3px solid var(--pink-accent);
+    outline-offset: 2px;
+    border-color: var(--pink-accent);
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .hero {
+        transform: none !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .nav-link::after {
+        height: 4px;
+    }
+    
+    .blog-card,
+    .preview-card,
+    .connect-card {
+        border: 2px solid #000;
+    }
+    
+    .cta-button,
+    .read-more-btn,
+    .connect-btn {
+        border: 2px solid #000;
+    }
+}
+
+/* Ensure minimum touch target sizes */
+@media (max-width: 768px) {
+    .nav-link,
+    .cta-button,
+    .read-more,
+    .learn-more-btn,
+    .read-more-btn,
+    .connect-btn,
+    .fun-fact-btn,
+    .subscribe-btn,
+    .coming-soon-btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* Prevent zoom on form inputs for iOS */
+@media screen and (max-width: 768px) {
+    .form-group input,
+    .form-group select,
+    .form-group textarea,
+    .email-input {
+        font-size: 16px !important;
     }
 } 
