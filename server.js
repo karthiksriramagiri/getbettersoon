@@ -28,6 +28,10 @@ app.get('/blog-broken-bones.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'blog-broken-bones.html'));
 });
 
+app.get('/blog-glasses.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'blog-glasses.html'));
+});
+
 app.get('/about.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'about.html'));
 });
